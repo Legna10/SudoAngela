@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-aligns the grid */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0; 
+    max-width: 450px;
+    margin-bottom: 20px; /* Add space below the grid */
+    margin-right: 70px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #ccc; /* Border untuk setiap sel */
+    background-color: white;
+}
+
+/* Bold border on the right for every third column */
+.cell:nth-child(3n) {
+    border-right: 3px solid #000;
+}
+
+/* Bold border on the bottom for every third row */
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 3px solid #000;
+}
+
+/* Bold borders for the grid edges */
+.cell:nth-child(-n+9) {
+    border-top: 5px solid #000;
+}
+.cell:nth-last-child(-n+9) {
+    border-bottom: 5px solid #000;
+}
+.cell:nth-child(9n+1) {
+    border-left: 5px solid #000;
+}
+.cell:nth-child(9n) {
+    border-right: 5px solid #000;
+}
+
+.button-row,
+.button-row-2 {
+    display: flex; /* Use flexbox to align buttons */
+    justify-content: center; /* Center buttons */
+    margin-bottom: 10px; /* Space between rows of buttons */
+}
+
+/* Style for buttons */
+button {
+    margin: 0 5px; /* Margin between buttons */
+    padding: 10px 20px; /* Padding for buttons */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor to pointer */
+}
